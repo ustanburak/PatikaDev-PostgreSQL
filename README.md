@@ -148,9 +148,9 @@ SELECT country_id,COUNT(*) FROM city GROUP BY country_id ORDER BY COUNT(*) DESC 
 );
 
 **2) Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.**
-
-insert into Employee (id, name, email, birthday) values (1, 'Barth', 'bpoulston0@gizmodo.com', '2020/12/15');
-insert into Employee (id, name, email, birthday) values (2, 'Elysia', 'earter1@shutterfly.com', '2020/11/22');
+```
+insert into Employee (id, name, email, birthday) values (1, 'Barth', 'bpoulston0@gizmodo.com', '2020/12/15
+İnsert into Employee (id, name, email, birthday) values (2, 'Elysia', 'earter1@shutterfly.com', '2020/11/22');
 insert into Employee (id, name, email, birthday) values (3, 'Averill', 'astithe2@weibo.com', '2020/09/05');
 insert into Employee (id, name, email, birthday) values (4, 'Edgardo', 'etomsett3@eepurl.com', '2021/02/17');
 insert into Employee (id, name, email, birthday) values (5, 'Jan', 'jmoreno4@newsvine.com', '2020/11/11');
@@ -213,7 +213,7 @@ DELETE FROM Employee WHERE email = 'rtb.barbaros@gmail.com';
 DELETE FROM Employee WHERE birthday = '2021/05/29';
 DELETE FROM Employee WHERE name = 'Tayyip';
 DELETE FROM Employee WHERE id = '1';
-
+```
 
 # **ÖDEV-9**
 
@@ -298,7 +298,8 @@ WHERE film_id = any
 WHERE rental_rate = ( SELECT MIN(rental_rate ) FROM film )
  AND
  replacement_cost = ( SELECT MIN(replacement_cost) FROM film ) );
-Payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.
+ 
+**3)Payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.**
 SELECT first_name,last_name
 FROM customer c
 JOIN payment p
@@ -308,6 +309,8 @@ WHERE amount = ( SELECT MAX(amount) from payment );
 # ** PSQL ve Uygulama I**
 
 PSQL
+
+```
 PSQL, PostgreSQL ile birlikte gelen terminal tabanlı bir kullanıcı arayüzüdür. PSQL sayesinde komut satırında sorgular yazıp, sonuçlarını görebiliriz. Aşağıda temel PSQL komutlarının ilk bölümünü bulabilirsiniz.
 PSQL ile PostgreSQL'e bağlanmak.
 psql -U <kullanıcı_adı>
@@ -348,3 +351,4 @@ SELECT *
 FROM film
 WHERE (length BETWEEN 80 AND 120) AND (rental_rate IN (0.99, 2.99));
 
+```
